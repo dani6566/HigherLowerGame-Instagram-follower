@@ -19,15 +19,15 @@ def compare(compareA,compareB):
     fcount_B = compareB['follower_count']
     print(vs)
     print(f"Against B: {compareB['name']},{compareB['description']},from {compareB['country']}")
-    print(f"countA: {fcount_A} and countB: {fcount_B}")
     choose = input("Who has more followers? Type 'A' or 'B': ").upper()
-    
     if fcount_A < fcount_B  and (choose == "B"):
         count_right += 1
         compareA = compareB
         compareB = random.choice(data)
         if compareA == compareB:
             compareB = random.choice(data)
+        print("\n"*20)
+        print(logo)
         print(f"Compare A: {compareA['name']},{compareA['description']},from {compareA['country']}")
         compare(compareA,compareB)
 
@@ -36,7 +36,9 @@ def compare(compareA,compareB):
         compareB = random.choice(data)
         if compareA == compareB:
             compareB = random.choice(data)
-        print(f"{count_right}")
+       
+        print("\n"*20)
+        print(logo)
         print(f"Compare A: {compareA['name']},{compareA['description']},from {compareA['country']}")
         compare(compareA,compareB)
     else:
